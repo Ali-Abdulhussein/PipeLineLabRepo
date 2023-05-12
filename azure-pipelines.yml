@@ -23,7 +23,7 @@ steps:
     azureSubscription: 'sp-keyvault'
     KeyVaultName: 'keyvault-test-00002'
     SecretsFilter: '*'
-    RunAsPreJob: false
+    RunAsPreJob: true
 - task: CmdLine@2
   inputs:
     script: |
