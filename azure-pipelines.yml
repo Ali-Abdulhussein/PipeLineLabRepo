@@ -17,12 +17,6 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: AzureKeyVault@2
-  inputs:
-    azureSubscription: 'sp-keyvault'
-    KeyVaultName: 'KeyVaultTest0001'
-    SecretsFilter: '*'
-    RunAsPreJob: true
 - task: CmdLine@2
   inputs:
     script: |
