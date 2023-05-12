@@ -10,23 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-  condition: 
-- task: AzureKeyVault@2
-  inputs:
-    azureSubscription: 'sp-keyvault'
-    KeyVaultName: 'keyvault-test-00002'
-    SecretsFilter: '*'
-    RunAsPreJob: true
 - task: CmdLine@2
   inputs:
     script: |
       echo Write your commands here
       
       echo Hello world
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'Visual Studio Professional Subscription(ec74a712-3898-4d3b-b156-b40ffb015c2f)'
+    KeyVaultName: 'keyvault-test-00002'
+    SecretsFilter: '*'
+    RunAsPreJob: false
