@@ -20,5 +20,5 @@ steps:
   displayName: "Use Key-Vault Secret"
   inputs:
     script: |
-      echo $(SQLPassword)
+      echo 'SQLPassword:'$(SQLPassword)
 
