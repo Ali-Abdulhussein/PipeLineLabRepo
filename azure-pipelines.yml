@@ -18,7 +18,8 @@ steps:
       echo Hello world
 - task: AzureKeyVault@2
   inputs:
-    azureSubscription: 'Visual Studio Professional Subscription(ec74a712-3898-4d3b-b156-b40ffb015c2f)'
-    KeyVaultName: 'keyvault-test-00002'
+    azureSubscription: 'sp-keyvault'
+    KeyVaultName: 'keyvault-test-00001'
     SecretsFilter: '*'
     RunAsPreJob: false
+
