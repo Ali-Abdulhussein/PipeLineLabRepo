@@ -17,8 +17,8 @@ steps:
     SecretsFilter: '*'
     RunAsPreJob: false
 - task: CmdLine@2
-  displayName: "Use Key-Vault Scrit"
+  displayName: "Use Key-Vault Secret"
   inputs:
     script: |
-      echo $(SecretName)
+      echo $(SQLPassword)
 
