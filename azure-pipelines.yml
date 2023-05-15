@@ -17,9 +17,8 @@ steps:
     SecretsFilter: '*'
     RunAsPreJob: false
 - task: CmdLine@2
+  displayName: "Use Key-Vault Scrit"
   inputs:
     script: |
-      echo Write your commands here
-      
-      echo Hello world
+      echo $(SecretName)
 
