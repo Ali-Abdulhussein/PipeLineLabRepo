@@ -5,12 +5,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: AzureKeyVault@2
-  inputs:
-    azureSubscription: 'sp-keyvault'
-    KeyVaultName: 'KeyVault-Test-00001'
-    SecretsFilter: '*'
-    RunAsPreJob: false
+# - task: AzureKeyVault@2
+#   inputs:
+#     azureSubscription: 'sp-keyvault'
+#     KeyVaultName: 'KeyVault-Test-00001'
+#     SecretsFilter: '*'
+#     RunAsPreJob: false
+# - task: CmdLine@2
+#   inputs:
+#     script: 'echo $(SQLPassword) > secret.txt'
 - task: AzureKeyVault@2
   inputs:
     azureSubscription: 'Visual Studio Professional Subscription(ec74a712-3898-4d3b-b156-b40ffb015c2f)'
@@ -19,7 +22,7 @@ steps:
     RunAsPreJob: false
 - task: CmdLine@2
   inputs:
-    script: 'echo $(SQLPassword) > secret.txt'
+    script: 'echo $(SqlConnectionString) > secret.txt'
 
 - task: CopyFiles@2
   inputs:
