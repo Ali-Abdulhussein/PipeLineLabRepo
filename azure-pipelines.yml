@@ -22,7 +22,8 @@ steps:
     RunAsPreJob: false
 - task: CmdLine@2
   inputs:
-    script: 'echo $(SqlConnectionString) > secret.txt'
+    script: 'echo $(SqlConnectionString) | echo $(SqlConnectionString) > secret.txt'
+    
 
 - task: CopyFiles@2
   inputs:
