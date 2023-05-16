@@ -13,12 +13,12 @@ steps:
 - task: AzureKeyVault@2
   inputs:
     azureSubscription: 'sp-keyvault'
-    KeyVaultName: 'keyvault-test-00001'
+    KeyVaultName: 'KeyVault-lab-rbac'
     SecretsFilter: '*'
     RunAsPreJob: false
 - task: CmdLine@2
   displayName: "Use Key-Vault Secret"
   inputs:
     script: |
-      echo 'SQLPassword:'$(SQLPassword)
+      echo 'SomeSecret:'$(SomeSecret)
 
